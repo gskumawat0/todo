@@ -1,6 +1,6 @@
 {
-  "name": "react-v1.0",
-  "version": "0.1.0",
+  "name": "todo-app",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
     "react": "^16.7.0",
@@ -18,5 +18,18 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gskumawat0/todo.git"
+  },
+  "author": "Gouri Shankar Kumawat <gskumawat555@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gskumawat0/todo/issues"
+  },
+  "homepage": "https://github.com/gskumawat0/todo#readme"
 }
