@@ -1,5 +1,8 @@
 body {
   background: linear-gradient(90deg, #8E2DE2, #4A00E0);
+  width: 100vw;
+  height: 100vh;
+
 }
 
 .main{
