@@ -1,34 +1,82 @@
-
-
-.main{
-  padding: 40px;
-  box-sizing: border-box;
-  height: 100%;
+body {
   background: linear-gradient(90deg, #8E2DE2, #4A00E0);
 }
 
-input, button{
+.main{
+	width: 60%;
+  padding: 40px;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.main-heading{
+	margin-left: 30%;
+	margin-bottom: 50px;
+}
+
+input{
   padding: 7px;
   margin: 15px;
   border-radius: 5px;
   outline: none;
-  width: 500px;
+  display: inline-block;
+  width: 81%;
   border-bottom: 2px solid gray;
   border-right: 2px solid gray;
 }
 .todo h1{
-  width: 500px;
+  line-height: .75rem;
+  font-size: 1.5rem;
   padding: 7px;
   margin: 15px;
+  text-align: left;
 }
 .todo ul{
-  width: 500px;
-  margin-left: 30px;
+  width: 80%;
+  margin-top: 10px;
+  margin-left: 15px;
+  list-style: none;
+}
+
+.todo p{
+	width: 80%;
+  	margin-left: 7%;
+}
+
+.form{
+	width: 80%;
+	margin-top: 10px;
+	margin-left: 25px;
+	padding: 5px 20px;
 }
 
 li {
   border-bottom: 2px solid gray;
   margin: 5px;
-  padding: 10px 10px 5px;
+  padding: 10px 20px 5px;
   color: white;
+  position: relative;
+}
+
+.del-btn{
+	margin-left: auto;
+	margin-right: 0%;
+	text-align: end;
+	color: red;
+	font-size: x-large;
+	font-weight: 700;
+	position: absolute;
+	right: 0;
+	padding: 0px 10px 10px 10px;
+}
+
+.btn-submit {
+  display: inline;
+  /* width: 10%; */
+  box-sizing: border-box;
+  padding: 10px 30px;
+  margin: 5px;
+  border-radius: 5px;
+  /* background:  #34495e; */
+  border: none;
 }

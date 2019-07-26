@@ -6,35 +6,51 @@ class App extends Component {
     super(props);
     this.state = {
       inputVal : '',
-      todo : ['eat','sleep', 'code']
+      todo : []
     };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleClick = this.handleClick.bind(this);
   }
-  handleChange (event){
+  handleChange = (event)=>{
     this.setState({inputVal: event.target.value});  
   }
+
+  delTodo = (i)=>{
+	  this.setState({
+		  todo: this.state.todo.filter((todo, idx)=> idx !== i)
+	  })
+  }
   
-  handleClick(){
-    if(this.state.inputVal && this.state.inputVal !== this.state.todo[this.state.todo.length-1])
-    this.setState({todo:[...this.state.todo, this.state.inputVal]});
-    
+  handleSubmit = (e)=>{
+	  e.preventDefault();
+	  let {inputVal, todo} = this.state;
+    if(inputVal && !todo.includes(inputVal) ){
+		this.setState({
+		  todo:[...this.state.todo, this.state.inputVal],
+		  inputVal: ''
+		});
+	}
+	else{
+		this.setState({
+			inputVal: ''
+		})
+	}
   }
   
   render() {
-    const todos = this.state.todo.map((todo,i)=><li key={i}>{todo}</li>)
+    let {todo} = this.state;
+    
     return (
       <div className="main">
-        <div>
-          <input  type='text' value={this.state.inputVal} onChange={this.handleChange}/>
-          <button onClick={this.handleClick}> submit</button>
-        </div>
+		  <h1 className='main-heading'>My ToDo</h1>
         <div className='todo'>
-          <h1> My Todos : </h1>
-          <ul>
-            {todos}
-          </ul>
-        </div>
+          <h1>Have fun and Complete below tasks </h1>
+          {todo.length > 0 ?  <ul className='list-unstyled'>
+            {todo.map((todo,i)=><li key={i}>{todo} <span className='del-btn' onClick={this.delTodo.bind(this, i)}>x</span></li>) }
+          </ul> : <p className='p'>All Done. Take a break</p>}
+        </div> 
+        <form onSubmit={this.handleSubmit} className='form'>
+          <input  type='text' value={this.state.inputVal} onChange={this.handleChange} placeholder='what are you planning to do'/>
+          <button type='submit' className='btn-submit'> Add</button>
+        </form>
       </div>
     );
   }
