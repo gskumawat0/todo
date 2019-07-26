@@ -8,7 +8,7 @@
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <link rel="manifest" crossorigin="use-credentials" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
@@ -23,7 +23,7 @@
   </head>
   <body>
     <style type="text/css">
-      body:{
+      body {
         background: linear-gradient(90deg, #8E2DE2, #4A00E0);
         /*width: 100%;*/
         /*height: 100%;*/
